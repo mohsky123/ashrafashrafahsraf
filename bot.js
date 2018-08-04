@@ -25,7 +25,133 @@ client.user.setGame(`Nothing`,"http://twitch.tv/S-F")
   console.log('╚[════════════]╝')
   console.log('')
   console.log('')
+var prefix = '-';
 });
+
+client.on("message", message => {
+    if (message.content === "-help") {
+        const embed = new Discord.RichEmbed()
+            .setColor("RANDOM")
+            .setThumbnail(message.author.avatarURL)
+            .setDescription(`
+   **:man_in_tuxedo::skin-tone-1: الترحيب و المغادره :man_in_tuxedo::skin-tone-1:
+   ============
+   انشئ شات من الثلاثه دول بأسم
+    1/ join
+    2/ wel
+   و سوف يرحب البوت ب الأشخاص الجدد   
+   :sleuth_or_spy::skin-tone-1: اوامر الأداره :sleuth_or_spy::skin-tone-1:
+   ============
+   -cr-colors | عمل ألوان بالعدد اللي تبيه
+   
+   -role bots < لإعطاء البوتات الرتبه اللي تبيها | < أسم الرتبه
+
+   -role hummans < لإعطاء الأعضاء الرتبه اللي تبيها | < أسم الرتبه
+   
+   -role {@user} {role} | لإعطاء شخص الرتبه اللي تبيها
+   
+   -kick {@user} {reason} | لطرد العضو :outbox_tray:
+   
+   -ban {@user} {reason} | لحظر العضو :no_entry:
+   
+   -mute {@user} {reason} | أسكات العضو :mute:
+   
+   -unmute {@user} |  لفك الميوت عن العضو :loud_sound:
+
+   -perm | لعرض برمشناتك
+   
+   -mct | لقفل الشات :no_entry:
+   
+   -unmct | لفتح الشات :on:
+   
+   -ct | يسوي روم كتابي :rolling_eyes:
+   
+   -cv | يسوي روم صوتي :crown:
+   
+   -bc {text} | ليرسل رساله لكل أعضاء السيرفر :mega:
+   
+   -bc2 {text} | ليرسل رساله لكل أعضاء السيرفر :mega: < نعم | لا >
+   
+   -sg | لعرض أقتراح للسيرفر يجب ان يكون فيه روم بأسم __suggest__ :)
+   
+   -clear {__NUMBER__} | ليمسح البوت الشات برقم الذي كتبته
+
+   -deleteroles | مسح كل الرتب
+   
+   -deletechannels | مسح كل القنوات
+**`)
+
+
+        message.author.sendEmbed(embed)
+
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+client.on("message", message => {
+        const embed = new Discord.RichEmbed()
+    if (message.content === "-help") {
+			        const embed = new Discord.RichEmbed()
+            .setColor("RANDOM")
+            .setThumbnail(message.author.avatarURL)
+            .setDescription(`
+  
+  ** :earth_africa: الأوامر العامه :earth_africa: 
+   ============
+   -color __<NUMBER>__ | لأختيار لك لون محدد من السيرفر
+   
+   -invites | لمعرفه انت جبت كم للسيرفر :sparkles: 
+   
+   -contact | لإرسال رساله لصاحب البوت :envelope_with_arrow: 
+
+   -time | لمعرفه الوقت بالدول العربيه :watch: 
+   
+   -inv | لكي تدعو البوت الى سيرفرك :sparkles: 
+   
+   -el | ليعرض كل الإيموجيات اللي بالسيرفر :joy:
+   
+   -id | عرض معلومات حسابك :bust_in_silhouette: 
+   
+   -ping | لعرض سرعه اتصال البوت :spy: 
+   
+   -bot | لعرض البوت في كم سيرفر و كم مستخدم و كم روم  :robot: 
+   
+   -info | ليظهر معلومات البوت :thinking: 
+   
+   -server | لكي يظهر معلومات السيرفر :no_mouth: 
+   
+   -mb | لكي يظهر كل حالات الأعضاء في السيرفر :heart: : :green_heart: : :yellow_heart: 
+   
+   -tag | لجعل الكلمه اللي تبيها مزخرفه :dragon_face:
+   
+   -avatar  , -avatar {@user} | لعرض صورتك الشخصيه او صوره الذي منشنته :selfie: 
+   
+   -image | لعرض صوره السيرفر :cherry_blossom: 
+
+   -ts | لترجمه لغه لـ لغه أخري :hearts:
+
+  ======:blossom:نــتــمــنــآ لــكــم آســتــمـــتــآع :blossom:======**
+   `)
+
+
+        message.author.sendEmbed(embed)
+
+    }
+});
+
+
+
+
+
 
 
 
