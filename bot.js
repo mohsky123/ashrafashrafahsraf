@@ -103,43 +103,7 @@ client.on("message", message => {
     }
 });
 
-client.on("message", message => {
-    if (message.content === "-help") {
-        const embed = new Discord.RichEmbed()
-            .setColor("RANDOM")
-            .setThumbnail(message.author.avatarURL)
-            
-            .setDescription(`
-  ** :kaaba:  القرآن الكريم :kaaba: 
-   ============
-   __سوي أمر ^-قران^ وبيجيلك كل أوامر القرآن الكريم وانت أختار أي رياكشن__
-   
-   :regional_indicator_a: القرآن كاملاً ماهر المعيقلي
-   
-   :regional_indicator_b: سورة البقرة كاملة للشيخ مشاري العفاسي
-   
-   :regional_indicator_c: سورة الكهف كاملة بصوت مشارى بن راشد العفاسي
-   
-   
-   
-   :stop_button: لإيقاف القرآن الكريم
-   
- 
-   
-   :regional_indicator_d: القرآن كاملاً عبدالباسط عبدالصمد
-   
-   :regional_indicator_e: القرآن كاملاً ياسر الدوسري
-   
-   :regional_indicator_f: سورة الواقعه بصوت الشيخ مشاري بن راشد العفاسي
-   
-  ======:blossom:نــتــمــنــآ لــكــم آســتــمـــتــآع :blossom:======**
-   `)
 
-
-        message.author.sendEmbed(embed)
-
-    }
-});
 
 
 
