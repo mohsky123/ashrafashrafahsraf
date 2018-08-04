@@ -1,33 +1,29 @@
-const Discord = require('discord.js');
+const Discord = require("discord.js");
 const client = new Discord.Client();
-const prefix = '.'
- client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`-help | -inv`,"http://twitch.tv/S-F")
-  console.log('')
-  console.log('')
-  console.log('╔[═════════════════════════════════════════════════════════════════]╗')
-  console.log(`[Start] ${new Date()}`);
-  console.log('╚[═════════════════════════════════════════════════════════════════]╝')
-  console.log('')
-  console.log('╔[════════════════════════════════════]╗');
-  console.log(`Logged in as * [ " ${client.user.username} " ]`);
-  console.log('')
-  console.log('Informations :')
-  console.log('')
-  console.log(`servers! [ " ${client.guilds.size} " ]`);
-  console.log(`Users! [ " ${client.users.size} " ]`);
-  console.log(`channels! [ " ${client.channels.size} " ]`);
-  console.log('╚[════════════════════════════════════]╝')
-  console.log('')
-  console.log('╔[════════════]╗')
-  console.log(' Bot Is Online')
-  console.log('╚[════════════]╝')
-  console.log('')
-  console.log('')
-});
-
-
+const fs = require("fs");
+var Canvas = require('canvas')
+const ms = require("ms");
+var jimp = require('jimp')
+const db = require('quick.db')
+const arraySort = require('array-sort'),
+      table = require('table');
+const translate = require('google-translate-api');
+const moment = require('moment');
+const ytdl = require('ytdl-core');
+const Codes = require('codes-official');
+const request = require('request');
+const getYoutubeID = require('get-youtube-id');
+const fetchVideoInfo = require('youtube-info');
+const math = require('math-expression-evaluator');
+const stripIndents = require('common-tags').stripIndents;
+const pretty = require('pretty-ms');
+const rn = require('random-number');
+let done = {};
+const child_process = require("child_process");
+const adminprefix = "-";
+const devs = ['389755149939113987'];
+const shorten = require('isgd');
+var prefix = '-';
 
 client.on('ready', () => {
      client.user.setActivity("-help | -inv",{type: 'WATCHING'})
@@ -42,7 +38,7 @@ client.on("message", message => {
         const embed = new Discord.RichEmbed()
             .setColor("RANDOM")
             .setThumbnail(message.author.avatarURL)
-           
+          
             `)
 
 
@@ -3483,37 +3479,5 @@ client.on("message", message => {
     message.channel.send(image)
         }
     });
-
-  client.on('message', message => {
-     if (message.content === "-website") {
-      const embed = new Discord.RichEmbed()
-  .setColor("RANDOM")
-  .setDescription('**الموقع الرسمي للبوت أدخل يا قلبي ونورنا __ https://mohamedtar5.wixsite.com/dzgaming __ **')
-  message.channel.sendEmbed(embed);
-    }
-});
-
-  client.on('message', message => {
-     if (message.content === "-site") {
-      const embed = new Discord.RichEmbed()
-  .setColor("RANDOM")
-  .setDescription('**الموقع الرسمي للبوت أدخل يا قلبي ونورنا __ https://mohamedtar5.wixsite.com/dzgaming __ **')
-  message.channel.sendEmbed(embed);
-    }
-});
-
-  client.on('message', message => {
-     if (message.content === "-موقع") {
-               const embed = new Discord.RichEmbed()
-  .setColor("RANDOM")
-  .setDescription('**الموقع الرسمي للبوت أدخل يا قلبي ونورنا __ https://mohamedtar5.wixsite.com/dzgaming __ **')
-  message.channel.sendEmbed(embed);
-
-    }
-});
-
-//-------------------------------TOKEN
-client.login("NDEwODM1NTkzNDUxNDA1MzEy.DjD3eA.j8O_GJ81cnQzPkAdAC5W2iaXW9s")
-
 
  client.login(process.env.BOT_TOKEN);
