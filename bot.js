@@ -40,12 +40,9 @@ client.user.setGame(`Nothing`,"http://twitch.tv/S-F")
 
 
 
-client.on('ready', () => {
-     client.user.setActivity(".help | .inv",{type: 'WATCHING'})
 
-});
 
-//-------------------------------------هيلب
+
 
 client.on("message", message => {
     if (message.content === ".help") {
