@@ -25,7 +25,6 @@ client.user.setGame(`-help | -inv`,"http://twitch.tv/S-F")
   console.log('╚[════════════]╝')
   console.log('')
   console.log('')
-  var prefix = '-';
 });
 
 
