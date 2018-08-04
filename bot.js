@@ -1,56 +1,47 @@
-const Discord = require('discord.js');
+const Discord = require("discord.js");
 const client = new Discord.Client();
-const prefix = '.'
+const fs = require("fs");
+var Canvas = require('canvas')
+const ms = require("ms");
+var jimp = require('jimp')
+const db = require('quick.db')
+const arraySort = require('array-sort'),
+      table = require('table');
+const translate = require('google-translate-api');
+const moment = require('moment');
+const ytdl = require('ytdl-core');
+const Codes = require('codes-official');
+const request = require('request');
+const getYoutubeID = require('get-youtube-id');
+const fetchVideoInfo = require('youtube-info');
+const math = require('math-expression-evaluator');
+const stripIndents = require('common-tags').stripIndents;
+const pretty = require('pretty-ms');
+const rn = require('random-number');
+let done = {};
+const child_process = require("child_process");
+const adminprefix = "-";
+const devs = ['389755149939113987'];
+const shorten = require('isgd');
+var prefix = '-';
 
 client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`Nothing`,"http://twitch.tv/S-F")
-  console.log('')
-  console.log('')
-  console.log('╔[═════════════════════════════════════════════════════════════════]╗')
-  console.log(`[Start] ${new Date()}`);
-  console.log('╚[═════════════════════════════════════════════════════════════════]╝')
-  console.log('')
-  console.log('╔[════════════════════════════════════]╗');
-  console.log(`Logged in as * [ " ${client.user.username} " ]`);
-  console.log('')
-  console.log('Informations :')
-  console.log('')
-  console.log(`servers! [ " ${client.guilds.size} " ]`);
-  console.log(`Users! [ " ${client.users.size} " ]`);
-  console.log(`channels! [ " ${client.channels.size} " ]`);
-  console.log('╚[════════════════════════════════════]╝')
-  console.log('')
-  console.log('╔[════════════]╗')
-  console.log(' Bot Is Online')
-  console.log('╚[════════════]╝')
-  console.log('')
-  console.log('')
+     client.user.setActivity("-help | -inv",{type: 'WATCHING'})
+
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//-------------------------------------هيلب
 
 client.on("message", message => {
-    if (message.content === ".help") {
+    if (message.content === "-help") {
         const embed = new Discord.RichEmbed()
             .setColor("RANDOM")
             .setThumbnail(message.author.avatarURL)
-            .setDescription(`** السيرفر الرسمي للبوت : __ :dove:https://discord.gg/exZHw8S :scroll: __
+            .setDescription(`** السيرفر الرسمي للبوت : __ :dove:  https://discord.gg/uazkYsk :scroll: __
 
+:hearts: الموقع الرسمي للبوت :__ https://mohamedtar5.wixsite.com/dzgaming __ :hearts: **
+            `)
 
 
         message.author.sendEmbed(embed)
@@ -59,7 +50,7 @@ client.on("message", message => {
 });
 
 client.on("message", message => {
-    if (message.content === ".help") {
+    if (message.content === "-help") {
         const embed = new Discord.RichEmbed()
             .setColor("RANDOM")
             .setThumbnail(message.author.avatarURL)
@@ -72,43 +63,43 @@ client.on("message", message => {
    و سوف يرحب البوت ب الأشخاص الجدد   
    :sleuth_or_spy::skin-tone-1: اوامر الأداره :sleuth_or_spy::skin-tone-1:
    ============
-   .cr-colors | عمل ألوان بالعدد اللي تبيه
+   -cr-colors | عمل ألوان بالعدد اللي تبيه
    
-   .role bots < لإعطاء البوتات الرتبه اللي تبيها | < أسم الرتبه
+   -role bots < لإعطاء البوتات الرتبه اللي تبيها | < أسم الرتبه
 
-   .role hummans < لإعطاء الأعضاء الرتبه اللي تبيها | < أسم الرتبه
+   -role hummans < لإعطاء الأعضاء الرتبه اللي تبيها | < أسم الرتبه
    
-   .role {@user} {role} | لإعطاء شخص الرتبه اللي تبيها
+   -role {@user} {role} | لإعطاء شخص الرتبه اللي تبيها
    
-   .kick {@user} {reason} | لطرد العضو :outbox_tray:
+   -kick {@user} {reason} | لطرد العضو :outbox_tray:
    
-   .ban {@user} {reason} | لحظر العضو :no_entry:
+   -ban {@user} {reason} | لحظر العضو :no_entry:
    
-   .mute {@user} {reason} | أسكات العضو :mute:
+   -mute {@user} {reason} | أسكات العضو :mute:
    
-   .unmute {@user} |  لفك الميوت عن العضو :loud_sound:
+   -unmute {@user} |  لفك الميوت عن العضو :loud_sound:
 
-   .perm | لعرض برمشناتك
+   -perm | لعرض برمشناتك
    
-   .mct | لقفل الشات :no_entry:
+   -mct | لقفل الشات :no_entry:
    
-   .unmct | لفتح الشات :on:
+   -unmct | لفتح الشات :on:
    
-   .ct | يسوي روم كتابي :rolling_eyes:
+   -ct | يسوي روم كتابي :rolling_eyes:
    
-   .cv | يسوي روم صوتي :crown:
+   -cv | يسوي روم صوتي :crown:
    
-   .bc {text} | ليرسل رساله لكل أعضاء السيرفر :mega:
+   -bc {text} | ليرسل رساله لكل أعضاء السيرفر :mega:
    
-   .bc2 {text} | ليرسل رساله لكل أعضاء السيرفر :mega: < نعم | لا >
+   -bc2 {text} | ليرسل رساله لكل أعضاء السيرفر :mega: < نعم | لا >
    
-   .sg | لعرض أقتراح للسيرفر يجب ان يكون فيه روم بأسم __suggest__ :)
+   -sg | لعرض أقتراح للسيرفر يجب ان يكون فيه روم بأسم __suggest__ :)
    
-   .clear {__NUMBER__} | ليمسح البوت الشات برقم الذي كتبته
+   -clear {__NUMBER__} | ليمسح البوت الشات برقم الذي كتبته
 
-   .deleteroles | مسح كل الرتب
+   -deleteroles | مسح كل الرتب
    
-   .deletechannels | مسح كل القنوات
+   -deletechannels | مسح كل القنوات
 **`)
 
 
@@ -118,7 +109,7 @@ client.on("message", message => {
 });
 
 client.on("message", message => {
-    if (message.content === ".help") {
+    if (message.content === "-help") {
         const embed = new Discord.RichEmbed()
             .setColor("RANDOM")
             .setThumbnail(message.author.avatarURL)
@@ -165,51 +156,51 @@ client.on("message", message => {
             .setDescription(`
   ** :video_game: الألعاب :video_game:
    ============
-   .te | تحويل الكلام ألي إيموجيز :video_game:
+   -te | تحويل الكلام ألي إيموجيز :video_game:
    
-   .rps | لعبه : حجره , ورقه , مقص :video_game:
+   -rps | لعبه : حجره , ورقه , مقص :video_game:
    
-   .marry | للعب لعبه الزواج :video_game:
+   -marry | للعب لعبه الزواج :video_game:
    
-   .mcskin | لعرض سكنك في ماين كرافت :video_game:
+   -mcskin | لعرض سكنك في ماين كرافت :video_game:
    
-   .un | للعب لعبه عكس الكلام :video_game:
+   -un | للعب لعبه عكس الكلام :video_game:
    
-   .hack | للعب لعبه الهاكر :video_game:
+   -hack | للعب لعبه الهاكر :video_game:
 
-   .sar7 | لمصارحه شخص :video_game:
+   -sar7 | لمصارحه شخص :video_game:
 
-   .لمصارحه شخص بالعربيه | صارح :video_game:
+   -لمصارحه شخص بالعربيه | صارح :video_game:
    
-   .للعب لعبه اعلام | اعلام :video_game:
+   -للعب لعبه اعلام | اعلام :video_game:
    
-   .لعبه عواصم | عواصم :video_game: __تصليـــح__
+   -لعبه عواصم | عواصم :video_game: __تصليـــح__
 
-   .يعطيك عمليه حسابيه وانت تحسبها | احسب :video_game:
+   -يعطيك عمليه حسابيه وانت تحسبها | احسب :video_game:
 
-   .roll | لأختار واحد من أي رقم تبيه :video_game:
+   -roll | لأختار واحد من أي رقم تبيه :video_game:
    
-   .gif | لعرض الصور المتحركه ^GIF^ :video_game:
+   -gif | لعرض الصور المتحركه ^GIF^ :video_game:
 
-   .animal | لعرض صور حيوانات :video_game:
+   -animal | لعرض صور حيوانات :video_game:
 
-   .achieve | لعرض الكلمه اللي تكتبها علي هيئه انجاز في ماين كرافت :video_game:
+   -achieve | لعرض الكلمه اللي تكتبها علي هيئه انجاز في ماين كرافت :video_game:
 
-   .micr | للعب لعبه ماين كرافت :video_game:
+   -micr | للعب لعبه ماين كرافت :video_game:
 
-   .حب :video_game:
+   -حب :video_game:
    
-   .كت تويت :video_game:
+   -كت تويت :video_game:
    
-   .صراحه :video_game:
+   -صراحه :video_game:
    
-   .خواطر :video_game:
+   -خواطر :video_game:
    
-   .مريم :video_game:
+   -مريم :video_game:
    
-   .عقاب :video_game:
+   -عقاب :video_game:
    
-   .لو خيروك :video_game:
+   -لو خيروك :video_game:
    
   ======:blossom:نــتــمــنــآ لــكــم آســتــمـــتــآع :blossom:======**
    `)
@@ -230,37 +221,37 @@ client.on("message", message => {
   
   ** :earth_africa: الأوامر العامه :earth_africa: 
    ============
-   .color __<NUMBER>__ | لأختيار لك لون محدد من السيرفر
+   -color __<NUMBER>__ | لأختيار لك لون محدد من السيرفر
    
-   .invites | لمعرفه انت جبت كم للسيرفر :sparkles: 
+   -invites | لمعرفه انت جبت كم للسيرفر :sparkles: 
    
-   .contact | لإرسال رساله لصاحب البوت :envelope_with_arrow: 
+   -contact | لإرسال رساله لصاحب البوت :envelope_with_arrow: 
 
-   .time | لمعرفه الوقت بالدول العربيه :watch: 
+   -time | لمعرفه الوقت بالدول العربيه :watch: 
    
-   .inv | لكي تدعو البوت الى سيرفرك :sparkles: 
+   -inv | لكي تدعو البوت الى سيرفرك :sparkles: 
    
-   .el | ليعرض كل الإيموجيات اللي بالسيرفر :joy:
+   -el | ليعرض كل الإيموجيات اللي بالسيرفر :joy:
    
-   .id | عرض معلومات حسابك :bust_in_silhouette: 
+   -id | عرض معلومات حسابك :bust_in_silhouette: 
    
-   .ping | لعرض سرعه اتصال البوت :spy: 
+   -ping | لعرض سرعه اتصال البوت :spy: 
    
-   .bot | لعرض البوت في كم سيرفر و كم مستخدم و كم روم  :robot: 
+   -bot | لعرض البوت في كم سيرفر و كم مستخدم و كم روم  :robot: 
    
-   .info | ليظهر معلومات البوت :thinking: 
+   -info | ليظهر معلومات البوت :thinking: 
    
-   .server | لكي يظهر معلومات السيرفر :no_mouth: 
+   -server | لكي يظهر معلومات السيرفر :no_mouth: 
    
-   .mb | لكي يظهر كل حالات الأعضاء في السيرفر :heart: : :green_heart: : :yellow_heart: 
+   -mb | لكي يظهر كل حالات الأعضاء في السيرفر :heart: : :green_heart: : :yellow_heart: 
    
-   .tag | لجعل الكلمه اللي تبيها مزخرفه :dragon_face:
+   -tag | لجعل الكلمه اللي تبيها مزخرفه :dragon_face:
    
-   .avatar  , -avatar {@user} | لعرض صورتك الشخصيه او صوره الذي منشنته :selfie: 
+   -avatar  , -avatar {@user} | لعرض صورتك الشخصيه او صوره الذي منشنته :selfie: 
    
-   .image | لعرض صوره السيرفر :cherry_blossom: 
+   -image | لعرض صوره السيرفر :cherry_blossom: 
 
-   .ts | لترجمه لغه لـ لغه أخري :hearts:
+   -ts | لترجمه لغه لـ لغه أخري :hearts:
 
   ======:blossom:نــتــمــنــآ لــكــم آســتــمـــتــآع :blossom:======**
    `)
@@ -3491,37 +3482,31 @@ client.on("message", message => {
         }
     });
 
- 
- 
- 
+  client.on('message', message => {
+     if (message.content === "-website") {
+      const embed = new Discord.RichEmbed()
+  .setColor("RANDOM")
+  .setDescription('**الموقع الرسمي للبوت أدخل يا قلبي ونورنا __ https://mohamedtar5.wixsite.com/dzgaming __ **')
+  message.channel.sendEmbed(embed);
+    }
+});
 
+  client.on('message', message => {
+     if (message.content === "-site") {
+      const embed = new Discord.RichEmbed()
+  .setColor("RANDOM")
+  .setDescription('**الموقع الرسمي للبوت أدخل يا قلبي ونورنا __ https://mohamedtar5.wixsite.com/dzgaming __ **')
+  message.channel.sendEmbed(embed);
+    }
+});
 
+  client.on('message', message => {
+     if (message.content === "-موقع") {
+               const embed = new Discord.RichEmbed()
+  .setColor("RANDOM")
+  .setDescription('**الموقع الرسمي للبوت أدخل يا قلبي ونورنا __ https://mohamedtar5.wixsite.com/dzgaming __ **')
+  message.channel.sendEmbed(embed);
 
+    }
+});
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-client.login(process.env.BOT_TOKEN);
