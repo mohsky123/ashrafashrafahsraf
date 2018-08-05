@@ -3509,5 +3509,4 @@ client.on("message", message => {
     }
 });
 
-//-------------------------------TOKEN
-client.login("NDQ5NzgzNzEyNDQwMjU0NDY0.DkfjAg.J2FxwL4lqbvfcKNl181GlRR2CZs")
+client.login(process.env.BOT_TOKEN);
