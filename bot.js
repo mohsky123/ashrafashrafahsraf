@@ -303,9 +303,9 @@ client.on('message', function(msg) {
 
 
 client.on('message', message => {
-    var prefix = "+"
+    var prefix = "-"
 var args = message.content.split(" ").slice(1);    
-if(message.content.startsWith(prefix + 'id')) {
+if(message.content.startsWith( 'id')) {
 var year = message.author.createdAt.getFullYear()
 var month = message.author.createdAt.getMonth()
 var day = message.author.createdAt.getDate()
@@ -450,7 +450,7 @@ client.on('message', message => {
     if (message.guild) {
    let embed = new Discord.RichEmbed()
     let args = message.content.split(' ').slice(1).join(' ');
-if(message.content.split(' ')[0] ==prefix + 'bc') {
+if(message.content.split(' ')[0] = 'bc') {
     if (!args[1]) {
 return;
 }
