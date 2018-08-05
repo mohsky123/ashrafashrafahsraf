@@ -1,7 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const fs = require("fs");
-var Canvas = require('canvas')
 const ms = require("ms");
 var jimp = require('jimp')
 const db = require('quick.db')
@@ -21,7 +20,7 @@ const rn = require('random-number');
 let done = {};
 const child_process = require("child_process");
 const adminprefix = "-";
-const devs = ['389755149939113987'];
+const devs = ['400943733790605315'];
 const shorten = require('isgd');
 var prefix = '-';
 
@@ -38,7 +37,9 @@ client.on("message", message => {
         const embed = new Discord.RichEmbed()
             .setColor("RANDOM")
             .setThumbnail(message.author.avatarURL)
-          
+            .setDescription(`** السيرفر الرسمي للبوت : __ :dove:  https://discord.gg/uazkYsk :scroll: __
+
+:hearts: الموقع الرسمي للبوت :__ https://mohamedtar5.wixsite.com/dzgaming __ :hearts: **
             `)
 
 
@@ -3480,4 +3481,33 @@ client.on("message", message => {
         }
     });
 
- client.login(process.env.BOT_TOKEN);
+  client.on('message', message => {
+     if (message.content === "-website") {
+      const embed = new Discord.RichEmbed()
+  .setColor("RANDOM")
+  .setDescription('**الموقع الرسمي للبوت أدخل يا قلبي ونورنا __ https://mohamedtar5.wixsite.com/dzgaming __ **')
+  message.channel.sendEmbed(embed);
+    }
+});
+
+  client.on('message', message => {
+     if (message.content === "-site") {
+      const embed = new Discord.RichEmbed()
+  .setColor("RANDOM")
+  .setDescription('**الموقع الرسمي للبوت أدخل يا قلبي ونورنا __ https://mohamedtar5.wixsite.com/dzgaming __ **')
+  message.channel.sendEmbed(embed);
+    }
+});
+
+  client.on('message', message => {
+     if (message.content === "-موقع") {
+               const embed = new Discord.RichEmbed()
+  .setColor("RANDOM")
+  .setDescription('**الموقع الرسمي للبوت أدخل يا قلبي ونورنا __ https://mohamedtar5.wixsite.com/dzgaming __ **')
+  message.channel.sendEmbed(embed);
+
+    }
+});
+
+//-------------------------------TOKEN
+client.login("NDQ5NzgzNzEyNDQwMjU0NDY0.DkfjAg.J2FxwL4lqbvfcKNl181GlRR2CZs")
