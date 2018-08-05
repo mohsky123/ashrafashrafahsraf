@@ -23,3 +23,5 @@ const adminprefix = "-";
 const devs = ['400943733790605315'];
 const shorten = require('isgd');
 var prefix = '-';
+
+client.login(process.env.BOT_TOKEN);
