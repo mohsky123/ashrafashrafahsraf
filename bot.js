@@ -169,7 +169,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-if (message.content.startsWith(prefix+"cc")) {
+if (message.content.startsWith("cc")) {
     var args = message.content.split(" ").slice(1);
     var argrst = args.join(' ');
                 message.guild.createChannel(`${argrst}`, 'text')
@@ -183,13 +183,13 @@ if (message.content.startsWith(prefix+"cc")) {
 
 client.on('message', message => {
     if (message.author.id === client.user.id) return;
-            if (message.content.startsWith(prefix + "ping")) {
+            if (message.content.startsWith("ping")) {
         message.channel.sendMessage(':ping_pong: Pong! In `' + `${client.ping}` + ' ms`');
     }
 });
 
 client.on('message', function(message) {
-    if(message.content.startsWith(prefix + 'roll')) {
+    if(message.content.startsWith('roll')) {
         let args = message.content.split(" ").slice(1);
         if (!args[0]) {
             message.channel.send('**حط رقم معين يتم السحب منه**');
@@ -206,7 +206,7 @@ client.on('message', function(message) {
 
 client.on('message', message => {
   if (true) {
-if (message.content === '.invite') {
+if (message.content === 'invite') {
       message.author.send('  رابط بوتك  |  تفضل ربط البوت     ').catch(e => console.log(e.stack));
  
     }
@@ -215,7 +215,7 @@ if (message.content === '.invite') {
  
  
 client.on('message', message => {
-     if (message.content === ".invite") {
+     if (message.content === "invite") {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
   .setColor("#9B59B6")
@@ -235,7 +235,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-if (message.content.startsWith(prefix+"cr")) {
+if (message.content.startsWith("cr")) {
     var args = message.content.split(" ").slice(1);
     var argrst = args.join(' ');
                 message.guild.createChannel(`${argrst}`,'voice')
@@ -281,7 +281,7 @@ client.on('message', message => {
 
 
 client.on('message', function(msg) {
-    if(msg.content.startsWith (prefix  + 'server')) {
+    if(msg.content.startsWith ('server')) {
       let embed = new Discord.RichEmbed()
       .setColor('RANDOM')
       .setThumbnail(msg.guild.iconURL)
@@ -389,7 +389,7 @@ const cuttweet = [
 ]
  
  client.on('message', message => {
-   if (message.content.startsWith("حط الامر هنا")) {
+   if (message.content.startsWith("كت")) {
                 if(!message.channel.guild) return message.reply('** This command only for servers**');
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
@@ -450,7 +450,7 @@ client.on('message', message => {
     if (message.guild) {
    let embed = new Discord.RichEmbed()
     let args = message.content.split(' ').slice(1).join(' ');
-if(message.content.split(' ')[0] == prefix + 'bc1') {
+if(message.content.split(' ')[0] ==prefix + 'bc') {
     if (!args[1]) {
 return;
 }
@@ -533,7 +533,7 @@ const Sra7a = [
     'صراحه  |  ما هي أمنياتك المُستقبلية؟‏',
 ]
   client.on('message', message => {
-if (message.content.startsWith('حط هنا الامر ')) {
+if (message.content.startsWith('صراحه ')) {
     if(!message.channel.guild) return message.reply('** This command only for servers **');
  var client= new Discord.RichEmbed()
  .setTitle("لعبة صراحة ..")
