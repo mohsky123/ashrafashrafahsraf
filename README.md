@@ -1,2 +1,1 @@
-# ashrafashrafahsraf
-ashraf
+worker: node bot.js
