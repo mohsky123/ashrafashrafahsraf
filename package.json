@@ -20,7 +20,7 @@
       "google-translate-api": "^2.3.0",
       "youtube-info":"^1.2.0",
       "ytdl-core":"^0.21.1"
-      "npm i giphy-api
+      "npm i giphy-api"
 
    },
    "devDependencies":{  
