@@ -8,7 +8,6 @@
       "discord.js":"^11.3.2",
       "discord.js-musicbot-addon":"^12.0.6",
       "ffmpeg":"^0.0.4",
-      "npm i giphy-api
       "ffmpeg-binaries":"^4.0.0",
       "get-youtube-id":"^1.0.0",
       "gif-search":"^2.0.1",
@@ -21,6 +20,8 @@
       "google-translate-api": "^2.3.0",
       "youtube-info":"^1.2.0",
       "ytdl-core":"^0.21.1"
+      "npm i giphy-api
+
    },
    "devDependencies":{  
 
